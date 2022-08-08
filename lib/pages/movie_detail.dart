@@ -16,7 +16,7 @@ class MovieDetail extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Movie Detail'),
+        title: const Text('Movie Details'),
       ),
       body: Center(
         child: BlocBuilder<MovieCubit, MovieState>(
