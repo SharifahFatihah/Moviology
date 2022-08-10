@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Moviology')),
-      body: Center(
+      body: SingleChildScrollView(
           child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -62,18 +62,18 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          const Text(
-            'Genre',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          Category(),
-          SizedBox(
-            height: 400,
-            child: MovieDisplay(),
-          ),
+          // const Text(
+          //   'Genre',
+          //   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          // ),
+          // SizedBox(height: 15),
+          // Column(
+          //   children: [
+          //     Category(),
+          //     SizedBox(height: 15),
+          //     MovieDisplay(movieName: _controller.text),
+          //   ],
+          // )
         ],
       )),
     );

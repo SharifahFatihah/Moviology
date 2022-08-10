@@ -6,6 +6,8 @@
 import 'dart:convert';
 
 class MovieModel {
+  var length;
+
   MovieModel({
     required this.title,
     required this.year,
