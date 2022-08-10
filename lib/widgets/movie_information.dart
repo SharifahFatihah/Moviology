@@ -10,34 +10,34 @@ class MovieInformation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(movieModel.ratings.length);
+    // print(movieModel.ratings.length);
     return Card(
       color: Colors.blueGrey[600],
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Container(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: Row(children: [
               Image(
                 width: 200,
                 height: 300,
                 image: NetworkImage('${movieModel.poster}'),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Container(
-                padding: EdgeInsets.only(left: 20),
+                padding: const EdgeInsets.only(left: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Genre: ${movieModel.genre}'),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Text(
                       'Duration: ${movieModel.runtime}',
                       // style: TextStyle(fontSize: 20),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     // Text('Rating: ${movieModel.ratings[index].source}'),
                     // Text('Rating: ${movieModel.ratings.first.source}'),
                   ],
@@ -46,7 +46,7 @@ class MovieInformation extends StatelessWidget {
             ]),
           ),
           Container(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Column(
               children: [
                 SizedBox(
@@ -54,58 +54,59 @@ class MovieInformation extends StatelessWidget {
                   width: 500,
                   child: Text(
                     '${movieModel.title}',
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 30, fontWeight: FontWeight.bold),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
                 Row(
                   children: [
                     SizedBox(
-                        width: 300,
+                        width: 330,
                         height: 100,
                         child: Text('${movieModel.plot}')),
                   ],
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.water,
                       color: Colors.amber,
                       size: 20,
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Text(
                       '${movieModel.ratings.first.source}: ${movieModel.ratings.first.value}',
                     ),
                   ],
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.water,
                       color: Colors.amber,
                       size: 20,
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Text(
                       '${movieModel.awards}',
                       // style: TextStyle(fontSize: 20),
                     ),
                   ],
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.upload_sharp,
                       color: Colors.amber,
                       size: 20,
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Text(
                       '${movieModel.actors}',
                       // style: TextStyle(fontSize: 20),

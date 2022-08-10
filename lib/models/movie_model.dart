@@ -2,7 +2,7 @@
 //
 //     final movieModel = movieModelFromMap(jsonString);
 
-import 'package:meta/meta.dart';
+// import 'package:meta/meta.dart';
 import 'dart:convert';
 
 class MovieModel {
