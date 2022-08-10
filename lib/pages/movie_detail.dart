@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/states/movie_cubit.dart';
 import 'package:movie_app/states/movie_state.dart';
 import 'package:movie_app/widgets/movie_information.dart';
+import 'package:movie_app/pages/home_page.dart';
 
 class MovieDetail extends StatelessWidget {
   const MovieDetail({required this.movieName, Key? key}) : super(key: key);
@@ -16,8 +17,36 @@ class MovieDetail extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Movie Detail'),
-        backgroundColor: Colors.purpleAccent.shade400,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: const <Widget>[
+            Text(
+              'MVG',
+              style: TextStyle(
+                  fontFamily: 'RubikMarkerHatch',
+                  fontSize: 40,
+                  color: Colors.purpleAccent),
+            ),
+            Text('Movie Detail'),
+          ],
+        ),
+        actions: <Widget>[
+          Padding(
+              padding: const EdgeInsets.only(right: 20.0),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => const HomePage()));
+                },
+                child: const Icon(
+                  Icons.search,
+                  size: 26.0,
+                ),
+              )),
+        ],
+        backgroundColor: Colors.black,
+        elevation: 15,
+        shadowColor: Colors.purpleAccent.shade400,
       ),
       body: Center(
         child: BlocBuilder<MovieCubit, MovieState>(

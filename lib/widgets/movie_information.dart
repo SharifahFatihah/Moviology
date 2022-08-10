@@ -22,15 +22,14 @@ class MovieInformation extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Row(
-                // mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   _moviePhoto(movieModel),
                   const SizedBox(width: 25),
                   _cardDetails(movieModel, spacer)
                 ],
               ),
+              _playButton(),
               Row(
-                // mainAxisAlignment: MainAxisAlignment.end,
                 children: [_moreDetails(movieModel, spacer, rowSpacer)],
               ),
             ],
@@ -57,8 +56,8 @@ class MovieInformation extends StatelessWidget {
                   width: 1,
                 ),
               ),
-              elevation: 20,
-              shadowColor: Colors.purpleAccent,
+              // elevation: 20,
+              // shadowColor: Colors.purpleAccent,
               color: Colors.black,
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -93,8 +92,8 @@ class MovieInformation extends StatelessWidget {
                   width: 1,
                 ),
               ),
-              elevation: 20,
-              shadowColor: Colors.purpleAccent,
+              // elevation: 20,
+              // shadowColor: Colors.purpleAccent,
               color: Colors.black,
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -107,7 +106,6 @@ class MovieInformation extends StatelessWidget {
                     ),
                     Text(
                       movieModel.runtime,
-                      // style: TextStyle(fontSize: 20),
                     ),
                     const Text(
                       'Duration',
@@ -129,8 +127,8 @@ class MovieInformation extends StatelessWidget {
                   width: 1,
                 ),
               ),
-              elevation: 20,
-              shadowColor: Colors.purpleAccent,
+              // elevation: 20,
+              // shadowColor: Colors.purpleAccent,
               color: Colors.black,
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -167,6 +165,19 @@ class MovieInformation extends StatelessWidget {
           width: 200,
           height: 400,
           decoration: BoxDecoration(
+            // boxShadow: [
+            //   BoxShadow(
+            //     color: Colors.purpleAccent,
+            //     offset: const Offset(
+            //       5.0,
+            //       5.0,
+            //     ),
+            //     blurRadius: 10.0,
+            //     spreadRadius: 2.0,
+            //   ), //BoxShad
+            // ],
+            color: Colors.white,
+            backgroundBlendMode: BlendMode.color,
             borderRadius: BorderRadius.circular(30),
             image: DecorationImage(
               fit: BoxFit.fitHeight,
@@ -178,48 +189,86 @@ class MovieInformation extends StatelessWidget {
     );
   }
 
+  Widget _playButton() {
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: SizedBox(
+        width: 400,
+        child: ElevatedButton.icon(
+          style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(Colors.purpleAccent),
+              padding: MaterialStateProperty.all(EdgeInsets.all(10)),
+              textStyle: MaterialStateProperty.all(TextStyle(fontSize: 20)),
+              elevation: MaterialStateProperty.all(10),
+              shadowColor: MaterialStateProperty.all(Colors.white),
+              alignment: Alignment.center,
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25.0),
+                // side: BorderSide(color: Colors.red)
+              ))),
+          onPressed: () {},
+          icon: const Icon(Icons.play_arrow, size: 30),
+          label: const Text(
+            'Play Trailer',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+        ),
+      ),
+    );
+  }
+
   Widget _moreDetails(
       MovieModel movieModel, SizedBox spacer, SizedBox rowSpacer) {
     return Flexible(
       flex: 2,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        // mainAxisAlignment: MainAxisAlignment.start,
+        // textDirection: TextDirection.ltr,
+        // mainAxisSize: MainAxisSize.max,
         children: [
           spacer,
           Text(
             movieModel.title,
-            style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.left,
           ),
           spacer,
           const Text(
             'Plot Summary',
             textAlign: TextAlign.left,
             style: TextStyle(
+              fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
           ),
           Text(
             movieModel.plot,
-            style: const TextStyle(color: Colors.grey),
+            style: const TextStyle(
+              color: Colors.grey,
+              fontSize: 20,
+            ),
           ),
           spacer,
           const Text(
             'Cast',
             textAlign: TextAlign.left,
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           Text(
             movieModel.actors,
-            style: const TextStyle(color: Colors.grey),
+            style: const TextStyle(fontSize: 20, color: Colors.grey),
           ),
           spacer,
           const Text(
             'Award',
             textAlign: TextAlign.left,
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           Text(
             movieModel.awards,
-            style: const TextStyle(color: Colors.grey),
+            style: const TextStyle(fontSize: 20, color: Colors.grey),
           ),
         ],
       ),
