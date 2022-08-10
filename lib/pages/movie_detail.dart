@@ -16,7 +16,8 @@ class MovieDetail extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Movie Details'),
+        title: const Text('Movie Detail'),
+        backgroundColor: Colors.purpleAccent.shade400,
       ),
       body: Center(
         child: BlocBuilder<MovieCubit, MovieState>(

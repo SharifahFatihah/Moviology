@@ -10,111 +10,216 @@ class MovieInformation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // print(movieModel.ratings.length);
-    return Card(
-      color: Colors.blueGrey[600],
-      child: Column(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          const SizedBox(height: 10),
-          Container(
-            padding: const EdgeInsets.all(10),
-            child: Row(children: [
-              Image(
-                width: 200,
-                height: 300,
-                image: NetworkImage('${movieModel.poster}'),
+    const spacer = SizedBox(height: 20);
+    const rowSpacer = SizedBox(width: 10);
+
+    print(movieModel.ratings.length);
+
+    return SingleChildScrollView(
+      child: Container(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: <Widget>[
+              Row(
+                // mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  _moviePhoto(movieModel),
+                  const SizedBox(width: 25),
+                  _cardDetails(movieModel, spacer)
+                ],
               ),
-              const SizedBox(height: 10),
-              Container(
-                padding: const EdgeInsets.only(left: 20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Genre: ${movieModel.genre}'),
-                    const SizedBox(height: 10),
-                    Text(
-                      'Duration: ${movieModel.runtime}',
-                      // style: TextStyle(fontSize: 20),
-                    ),
-                    const SizedBox(height: 10),
-                    // Text('Rating: ${movieModel.ratings[index].source}'),
-                    // Text('Rating: ${movieModel.ratings.first.source}'),
-                  ],
-                ),
-              )
-            ]),
+              Row(
+                // mainAxisAlignment: MainAxisAlignment.end,
+                children: [_moreDetails(movieModel, spacer, rowSpacer)],
+              ),
+            ],
           ),
-          Container(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 50,
-                  width: 500,
-                  child: Text(
-                    '${movieModel.title}',
-                    style: const TextStyle(
-                        fontSize: 30, fontWeight: FontWeight.bold),
-                  ),
+        ),
+      ),
+    );
+  }
+
+  Widget _cardDetails(MovieModel movieModel, SizedBox spacer) {
+    return Expanded(
+      flex: 2,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          SizedBox(
+            width: 100.0,
+            child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+                side: BorderSide(
+                  color: Colors.white.withOpacity(0.5),
+                  width: 1,
                 ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Row(
-                  children: [
-                    SizedBox(
-                        width: 330,
-                        height: 100,
-                        child: Text('${movieModel.plot}')),
-                  ],
-                ),
-                const SizedBox(height: 5),
-                Row(
-                  children: [
-                    const Icon(
-                      Icons.water,
-                      color: Colors.amber,
-                      size: 20,
-                    ),
-                    const SizedBox(width: 10),
-                    Text(
-                      '${movieModel.ratings.first.source}: ${movieModel.ratings.first.value}',
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 5),
-                Row(
+              ),
+              elevation: 20,
+              shadowColor: Colors.purpleAccent,
+              color: Colors.black,
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
                   children: [
                     const Icon(
-                      Icons.water,
-                      color: Colors.amber,
-                      size: 20,
+                      Icons.video_camera_back,
+                      color: Colors.white,
+                      size: 35,
                     ),
-                    const SizedBox(width: 10),
                     Text(
-                      '${movieModel.awards}',
-                      // style: TextStyle(fontSize: 20),
+                      movieModel.genre,
+                      textAlign: TextAlign.center,
+                    ),
+                    const Text(
+                      'Genre',
+                      style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
-                const SizedBox(height: 5),
-                Row(
-                  children: [
-                    const Icon(
-                      Icons.upload_sharp,
-                      color: Colors.amber,
-                      size: 20,
-                    ),
-                    const SizedBox(width: 10),
-                    Text(
-                      '${movieModel.actors}',
-                      // style: TextStyle(fontSize: 20),
-                    ),
-                  ],
-                ),
-              ],
+              ),
             ),
+          ),
+          spacer,
+          SizedBox(
+            width: 100.0,
+            child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+                side: BorderSide(
+                  color: Colors.white.withOpacity(0.5),
+                  width: 1,
+                ),
+              ),
+              elevation: 20,
+              shadowColor: Colors.purpleAccent,
+              color: Colors.black,
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  children: [
+                    const Icon(
+                      Icons.watch_later,
+                      color: Colors.white,
+                      size: 35,
+                    ),
+                    Text(
+                      movieModel.runtime,
+                      // style: TextStyle(fontSize: 20),
+                    ),
+                    const Text(
+                      'Duration',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          spacer,
+          SizedBox(
+            width: 100.0,
+            child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+                side: BorderSide(
+                  color: Colors.white.withOpacity(0.5),
+                  width: 1,
+                ),
+              ),
+              elevation: 20,
+              shadowColor: Colors.purpleAccent,
+              color: Colors.black,
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  children: [
+                    const Icon(
+                      Icons.star,
+                      color: Colors.white,
+                      size: 35,
+                    ),
+                    Text(
+                      movieModel.ratings.first.value,
+                    ),
+                    const Text(
+                      'Rating',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _moviePhoto(MovieModel movieModel) {
+    return Expanded(
+      flex: 4,
+      child: Hero(
+        tag: movieModel.poster,
+        child: Container(
+          width: 200,
+          height: 400,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30),
+            image: DecorationImage(
+              fit: BoxFit.fitHeight,
+              image: NetworkImage(movieModel.poster),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _moreDetails(
+      MovieModel movieModel, SizedBox spacer, SizedBox rowSpacer) {
+    return Flexible(
+      flex: 2,
+      child: Column(
+        children: [
+          spacer,
+          Text(
+            movieModel.title,
+            style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+          ),
+          spacer,
+          const Text(
+            'Plot Summary',
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Text(
+            movieModel.plot,
+            style: const TextStyle(color: Colors.grey),
+          ),
+          spacer,
+          const Text(
+            'Cast',
+            textAlign: TextAlign.left,
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          Text(
+            movieModel.actors,
+            style: const TextStyle(color: Colors.grey),
+          ),
+          spacer,
+          const Text(
+            'Award',
+            textAlign: TextAlign.left,
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          Text(
+            movieModel.awards,
+            style: const TextStyle(color: Colors.grey),
           ),
         ],
       ),
