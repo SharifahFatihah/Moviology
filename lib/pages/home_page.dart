@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:movie_app/pages/movie_detail.dart';
+import 'package:movie_app/pages/movie_display.dart';
+import 'package:movie_app/widgets/category.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -30,39 +32,48 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Search Movie')),
+      appBar: AppBar(title: const Text('Moviology')),
       body: Center(
           child: Column(
+        mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          const Text(
-            'Enter movie name: ',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 20),
           Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(25),
             child: TextField(
               controller: _controller,
               decoration: InputDecoration(
                 labelText: 'Movie Name',
                 floatingLabelBehavior: FloatingLabelBehavior.auto,
                 border: OutlineInputBorder(),
+                suffixIcon: IconButton(
+                  icon: Icon(Icons.search),
+                  onPressed: _isMovieNameEmpty
+                      ? null
+                      : (() {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MovieDetail(
+                                        movieName: _controller.text,
+                                      )));
+                        }),
+                ),
               ),
             ),
           ),
-          ElevatedButton(
-              onPressed: _isMovieNameEmpty
-                  ? null
-                  : (() {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => MovieDetail(
-                                    movieName: _controller.text,
-                                  )));
-                    }),
-              child: const Text('Search'))
+          const Text(
+            'Genre',
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Category(),
+          SizedBox(
+            height: 400,
+            child: MovieDisplay(),
+          ),
         ],
       )),
     );

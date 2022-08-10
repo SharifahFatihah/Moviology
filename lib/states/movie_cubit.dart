@@ -15,6 +15,9 @@ class MovieCubit extends Cubit<MovieState> {
       MovieModel movieModel =
           await movieService.fetchMovieInformation(movieName);
 
+      // print('printing length');
+      // print(movieModel.ratings.length);
+
       emit(
         MovieLoaded(movieModel: movieModel),
       );
