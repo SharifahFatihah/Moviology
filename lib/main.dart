@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/pages/home_page.dart';
+import 'package:movie_app/states/bookmarks.dart';
 import 'package:movie_app/states/movie_cubit.dart';
 
 void main() {
-  runApp(BlocProvider(
-    create: (context) => MovieCubit(),
+  runApp(MultiBlocProvider(
+    providers: [
+      BlocProvider<MovieCubit>(
+        create: (context) => MovieCubit(),
+      ),
+      BlocProvider<BookmarkCubit>(
+        create: (_) => BookmarkCubit(),
+      ),
+    ],
     child: MyApp(),
   ));
 }

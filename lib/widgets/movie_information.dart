@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/models/movie_model.dart';
 import 'package:movie_app/pages/watch_later.dart';
+import 'package:movie_app/states/bookmarks.dart';
 
 //display movie information
 class MovieInformation extends StatelessWidget {
@@ -196,6 +198,7 @@ class MovieInformation extends StatelessWidget {
                 // side: BorderSide(color: Colors.red)
               ))),
           onPressed: () {
+            BlocProvider.of<BookmarkCubit>(context).addBookmark(movieModel);
             Navigator.push(
                 context,
                 MaterialPageRoute(

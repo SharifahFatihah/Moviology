@@ -31,13 +31,38 @@ class WatchLaterList extends StatelessWidget {
             padding: const EdgeInsets.all(10.0),
             child: Column(
               children: [
-                // const Icon(
-                //   Icons.watch_later,
-                //   color: Colors.white,
-                //   size: 35,
-                // ),
+                const Icon(
+                  Icons.access_alarm,
+                  color: Colors.white,
+                  size: 35,
+                ),
+                Hero(
+                  tag: movieModel.poster,
+                  child: Container(
+                    width: 200,
+                    height: 400,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      backgroundBlendMode: BlendMode.color,
+                      borderRadius: BorderRadius.circular(30),
+                      image: DecorationImage(
+                        fit: BoxFit.fitHeight,
+                        image: NetworkImage(movieModel.poster),
+                      ),
+                    ),
+                  ),
+                ),
+                Text(
+                  movieModel.rated,
+                ),
+                Text(
+                  movieModel.runtime,
+                ),
                 Text(
                   movieModel.title,
+                ),
+                Text(
+                  movieModel.genre,
                 ),
                 // const Text(
                 //   'Duration',
