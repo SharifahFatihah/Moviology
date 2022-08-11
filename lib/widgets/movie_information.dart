@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/models/movie_model.dart';
 import 'package:movie_app/pages/watch_later.dart';
+import 'package:movie_app/states/bookmarks.dart';
 
 //display movie information
 class MovieInformation extends StatelessWidget {
@@ -57,8 +59,6 @@ class MovieInformation extends StatelessWidget {
                   width: 1,
                 ),
               ),
-              // elevation: 20,
-              // shadowColor: Colors.purpleAccent,
               color: Colors.black,
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -93,8 +93,6 @@ class MovieInformation extends StatelessWidget {
                   width: 1,
                 ),
               ),
-              // elevation: 20,
-              // shadowColor: Colors.purpleAccent,
               color: Colors.black,
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -185,8 +183,9 @@ class MovieInformation extends StatelessWidget {
         child: ElevatedButton.icon(
           style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all(Colors.purpleAccent),
-              padding: MaterialStateProperty.all(EdgeInsets.all(10)),
-              textStyle: MaterialStateProperty.all(TextStyle(fontSize: 20)),
+              padding: MaterialStateProperty.all(const EdgeInsets.all(10)),
+              textStyle:
+                  MaterialStateProperty.all(const TextStyle(fontSize: 20)),
               elevation: MaterialStateProperty.all(10),
               shadowColor: MaterialStateProperty.all(Colors.white),
               alignment: Alignment.center,
@@ -196,6 +195,7 @@ class MovieInformation extends StatelessWidget {
                 // side: BorderSide(color: Colors.red)
               ))),
           onPressed: () {
+            BlocProvider.of<BookmarkCubit>(context).addBookmark(movieModel);
             Navigator.push(
                 context,
                 MaterialPageRoute(

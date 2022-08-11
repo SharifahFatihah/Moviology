@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/pages/movie_detail.dart';
 import 'package:movie_app/pages/movie_display.dart';
 import 'package:movie_app/widgets/category.dart';
+import 'package:movie_app/pages/watch_later.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -44,9 +45,14 @@ class _HomePageState extends State<HomePage> {
           Padding(
               padding: const EdgeInsets.only(right: 20.0),
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const WatchLater()));
+                },
                 child: const Icon(
-                  Icons.video_library,
+                  Icons.bookmark,
                   size: 26.0,
                 ),
               )),
@@ -83,7 +89,6 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-
           SizedBox(
             width: 350,
             child: TextField(
@@ -132,15 +137,6 @@ class _HomePageState extends State<HomePage> {
               style: TextStyle(fontSize: 16, color: Colors.white70),
             ),
           ),
-
-          // SizedBox(
-          //   height: 15,
-          // ),
-          // Category(),
-          // SizedBox(
-          //   height: 400,
-          //   child: MovieDisplay(),
-          // ),
         ],
       )),
     );
