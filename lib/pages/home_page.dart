@@ -116,7 +116,7 @@ class _HomePageState extends State<HomePage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => MovieDetail(
+                                  builder: (context) => MovieDisplay(
                                         movieName: _controller.text,
                                       )));
                         }),
