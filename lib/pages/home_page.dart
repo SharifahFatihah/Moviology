@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/pages/movie_detail.dart';
 import 'package:movie_app/pages/movie_display.dart';
 import 'package:movie_app/widgets/category.dart';
+import 'package:movie_app/pages/watch_later.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -44,7 +45,12 @@ class _HomePageState extends State<HomePage> {
           Padding(
               padding: const EdgeInsets.only(right: 20.0),
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const WatchLater()));
+                },
                 child: const Icon(
                   Icons.video_library,
                   size: 26.0,

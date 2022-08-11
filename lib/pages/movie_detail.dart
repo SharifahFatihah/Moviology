@@ -49,15 +49,10 @@ class MovieDetail extends StatelessWidget {
               padding: const EdgeInsets.only(right: 20.0),
               child: GestureDetector(
                 onTap: () {
-                  // Navigator.of(context).push(MaterialPageRoute(
-                  //     builder: (_) => const WatchLaterList()));
-
-                  // Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //         builder: (context) => WatchLater(
-                  //               movieName: movieModel.title,
-                  //             )));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const WatchLater()));
                 },
                 child: const Icon(
                   Icons.video_library,
