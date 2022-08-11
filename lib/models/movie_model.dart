@@ -6,6 +6,8 @@
 import 'dart:convert';
 
 class MovieModel {
+  var length;
+
   MovieModel({
     required this.title,
     required this.year,
@@ -27,10 +29,10 @@ class MovieModel {
     required this.imdbVotes,
     required this.imdbId,
     required this.type,
-    required this.dvd,
-    required this.boxOffice,
-    required this.production,
-    required this.website,
+    // required this.dvd,
+    // required this.boxOffice,
+    // required this.production,
+    // required this.website,
     required this.response,
   });
 
@@ -54,10 +56,10 @@ class MovieModel {
   final String imdbVotes;
   final String imdbId;
   final String type;
-  final String dvd;
-  final String boxOffice;
-  final String production;
-  final String website;
+  // final String dvd;
+  // final String boxOffice;
+  // final String production;
+  // final String website;
   final String response;
 
   factory MovieModel.fromJson(String str) =>
@@ -87,10 +89,10 @@ class MovieModel {
         imdbVotes: json["imdbVotes"],
         imdbId: json["imdbID"],
         type: json["Type"],
-        dvd: json["DVD"],
-        boxOffice: json["BoxOffice"],
-        production: json["Production"],
-        website: json["Website"],
+        // dvd: json["DVD"],
+        // boxOffice: json["BoxOffice"],
+        // production: json["Production"],
+        // website: json["Website"],
         response: json["Response"],
       );
 
@@ -115,10 +117,10 @@ class MovieModel {
         "imdbVotes": imdbVotes,
         "imdbID": imdbId,
         "Type": type,
-        "DVD": dvd,
-        "BoxOffice": boxOffice,
-        "Production": production,
-        "Website": website,
+        // "DVD": dvd,
+        // "BoxOffice": boxOffice,
+        // "Production": production,
+        // "Website": website,
         "Response": response,
       };
 }

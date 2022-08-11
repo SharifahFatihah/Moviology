@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/states/movie_cubit.dart';
 import 'package:movie_app/states/movie_state.dart';
 import 'package:movie_app/widgets/movie_information.dart';
-import 'package:movie_app/widgets/watch_later_list.dart';
 import 'package:movie_app/pages/home_page.dart';
 import 'package:movie_app/pages/watch_later.dart';
 

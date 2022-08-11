@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/models/movie_model.dart';
 import 'package:movie_app/states/bookmarks.dart';
-import 'package:movie_app/states/movie_cubit.dart';
-import 'package:movie_app/states/movie_state.dart';
 import 'package:movie_app/widgets/watch_later_list.dart';
 import 'package:movie_app/pages/home_page.dart';
 

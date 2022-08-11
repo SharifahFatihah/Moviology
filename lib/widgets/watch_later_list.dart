@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/models/movie_model.dart';
-import 'package:movie_app/pages/watch_later.dart';
 import 'package:movie_app/states/bookmarks.dart';
 
 //display movie information

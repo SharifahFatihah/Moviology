@@ -16,8 +16,6 @@ class MovieInformation extends StatelessWidget {
     const spacer = SizedBox(height: 20);
     const rowSpacer = SizedBox(width: 10);
 
-    print(movieModel.ratings.length);
-
     return SingleChildScrollView(
       child: Container(
         child: Padding(
@@ -219,9 +217,6 @@ class MovieInformation extends StatelessWidget {
       flex: 2,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        // mainAxisAlignment: MainAxisAlignment.start,
-        // textDirection: TextDirection.ltr,
-        // mainAxisSize: MainAxisSize.max,
         children: [
           spacer,
           Text(
