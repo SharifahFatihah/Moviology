@@ -71,7 +71,7 @@ class MovieDisplay extends StatelessWidget {
                               builder: (context) => MovieDetail(
                                     movieName: movieSearch.search[index].title,
                                   )));
-                      print('sini-------------: ${movieName[index]}');
+                      // print('sini-------------: ${movieName}');
                     },
                     title: Text(movieSearch.search[index].title),
                     leading: CircleAvatar(
