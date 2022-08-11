@@ -12,7 +12,7 @@ class MovieDisplay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     MovieCubit cubit = BlocProvider.of<MovieCubit>(context)
-      ..fetchMovie(movieName);
+      ..fetchMovieList(movieName);
 
     return Center(
       child: BlocBuilder<MovieCubit, MovieState>(

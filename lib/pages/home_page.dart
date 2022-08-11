@@ -62,18 +62,14 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          // const Text(
-          //   'Genre',
-          //   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          // ),
-          // SizedBox(height: 15),
-          // Column(
-          //   children: [
-          //     Category(),
-          //     SizedBox(height: 15),
-          //     MovieDisplay(movieName: _controller.text),
-          //   ],
-          // )
+          SizedBox(height: 15),
+          Column(
+            children: [
+              Category(),
+              SizedBox(height: 15),
+              MovieDisplay(movieName: _controller.text),
+            ],
+          )
         ],
       )),
     );
