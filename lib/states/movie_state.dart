@@ -1,4 +1,5 @@
 import 'package:movie_app/models/movie_model.dart';
+import 'package:movie_app/models/search_list.dart';
 
 //state
 abstract class MovieState {}
@@ -11,6 +12,14 @@ class MovieLoaded extends MovieState {
   final MovieModel movieModel;
 
   MovieLoaded({required this.movieModel});
+}
+
+class MovieListLoaded extends MovieState {
+  final MovieSearch movieSearch;
+
+  var movieModel;
+
+  MovieListLoaded({required this.movieSearch});
 }
 
 class MovieError extends MovieState {

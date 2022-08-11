@@ -25,8 +25,6 @@ class _HomePageState extends State<HomePage> {
     _controller.addListener(() {
       setState((() => _isMovieNameEmpty = _controller.text.isEmpty));
     });
-    //Or directly write as one line
-    // _controller.addListener(() => isMovieNameEmpty = _controller.text.isEmpty);
   }
 
   @override
@@ -54,7 +52,7 @@ class _HomePageState extends State<HomePage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => MovieDetail(
+                                  builder: (context) => MovieDisplay(
                                         movieName: _controller.text,
                                       )));
                         }),
@@ -62,18 +60,6 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          // const Text(
-          //   'Genre',
-          //   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          // ),
-          // SizedBox(height: 15),
-          // Column(
-          //   children: [
-          //     Category(),
-          //     SizedBox(height: 15),
-          //     MovieDisplay(movieName: _controller.text),
-          //   ],
-          // )
         ],
       )),
     );
