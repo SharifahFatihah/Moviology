@@ -3,8 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/states/movie_cubit.dart';
 import 'package:movie_app/states/movie_state.dart';
 import 'package:movie_app/widgets/movie_information.dart';
+import 'package:movie_app/widgets/watch_later_list.dart';
 import 'package:movie_app/pages/home_page.dart';
 import 'package:movie_app/widgets/movie_list.dart';
+
+import 'package:movie_app/pages/watch_later.dart';
 
 class MovieDetail extends StatelessWidget {
   const MovieDetail({required this.movieName, Key? key}) : super(key: key);
@@ -25,7 +28,7 @@ class MovieDetail extends StatelessWidget {
               'MVG',
               style: TextStyle(
                   fontFamily: 'RubikMarkerHatch',
-                  fontSize: 40,
+                  fontSize: 30,
                   color: Colors.purpleAccent),
             ),
             Text('Movie Detail'),
@@ -41,6 +44,20 @@ class MovieDetail extends StatelessWidget {
                 },
                 child: const Icon(
                   Icons.search,
+                  size: 26.0,
+                ),
+              )),
+          Padding(
+              padding: const EdgeInsets.only(right: 20.0),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const WatchLater()));
+                },
+                child: const Icon(
+                  Icons.video_library,
                   size: 26.0,
                 ),
               )),
