@@ -30,6 +30,7 @@ class MovieService {
 
   Future<MovieSearch> searchMovie(String movieName) async {
     //https://www.omdbapi.com/?s=Batman&apikey=86435894 //i:id, t:title
+
     const String apiKey = '86435894';
     final Uri url = Uri(
       scheme: 'http',
@@ -46,6 +47,7 @@ class MovieService {
       // final result = jsonDecode(response.body);
       // Iterable list = result["Search"];
       // return list.map((e) => MovieSearch.fromJson(e)).toList();
+
     } else {
       throw Exception('Failed to load movie information.');
     }
