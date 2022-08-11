@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/models/movie_model.dart';
+import 'package:movie_app/pages/watch_later.dart';
 
 //display movie information
 class MovieInformation extends StatelessWidget {
@@ -28,7 +29,7 @@ class MovieInformation extends StatelessWidget {
                   _cardDetails(movieModel, spacer)
                 ],
               ),
-              _playButton(),
+              _playButton(context, movieModel),
               Row(
                 children: [_moreDetails(movieModel, spacer, rowSpacer)],
               ),
@@ -127,8 +128,6 @@ class MovieInformation extends StatelessWidget {
                   width: 1,
                 ),
               ),
-              // elevation: 20,
-              // shadowColor: Colors.purpleAccent,
               color: Colors.black,
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -165,17 +164,6 @@ class MovieInformation extends StatelessWidget {
           width: 200,
           height: 400,
           decoration: BoxDecoration(
-            // boxShadow: [
-            //   BoxShadow(
-            //     color: Colors.purpleAccent,
-            //     offset: const Offset(
-            //       5.0,
-            //       5.0,
-            //     ),
-            //     blurRadius: 10.0,
-            //     spreadRadius: 2.0,
-            //   ), //BoxShad
-            // ],
             color: Colors.white,
             backgroundBlendMode: BlendMode.color,
             borderRadius: BorderRadius.circular(30),
@@ -189,7 +177,7 @@ class MovieInformation extends StatelessWidget {
     );
   }
 
-  Widget _playButton() {
+  Widget _playButton(context, MovieModel movieModel) {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: SizedBox(
@@ -207,10 +195,17 @@ class MovieInformation extends StatelessWidget {
                 borderRadius: BorderRadius.circular(25.0),
                 // side: BorderSide(color: Colors.red)
               ))),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => WatchLater(
+                          movieName: movieModel.title,
+                        )));
+          },
           icon: const Icon(Icons.play_arrow, size: 30),
           label: const Text(
-            'Play Trailer',
+            'Watch Later',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),

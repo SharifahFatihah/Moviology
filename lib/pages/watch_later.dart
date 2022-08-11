@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/states/movie_cubit.dart';
 import 'package:movie_app/states/movie_state.dart';
-import 'package:movie_app/widgets/movie_information.dart';
 import 'package:movie_app/widgets/watch_later_list.dart';
 import 'package:movie_app/pages/home_page.dart';
-import 'package:movie_app/pages/watch_later.dart';
 
-class MovieDetail extends StatelessWidget {
-  const MovieDetail({required this.movieName, Key? key}) : super(key: key);
+class WatchLater extends StatelessWidget {
+  const WatchLater({required this.movieName, Key? key}) : super(key: key);
 
   final String movieName;
 
@@ -29,7 +27,7 @@ class MovieDetail extends StatelessWidget {
                   fontSize: 30,
                   color: Colors.purpleAccent),
             ),
-            Text('Movie Detail'),
+            Text('Watch Later'),
           ],
         ),
         actions: <Widget>[
@@ -48,17 +46,7 @@ class MovieDetail extends StatelessWidget {
           Padding(
               padding: const EdgeInsets.only(right: 20.0),
               child: GestureDetector(
-                onTap: () {
-                  // Navigator.of(context).push(MaterialPageRoute(
-                  //     builder: (_) => const WatchLaterList()));
-
-                  // Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //         builder: (context) => WatchLater(
-                  //               movieName: movieModel.title,
-                  //             )));
-                },
+                onTap: () {},
                 child: const Icon(
                   Icons.video_library,
                   size: 26.0,
@@ -77,8 +65,8 @@ class MovieDetail extends StatelessWidget {
               return const CircularProgressIndicator();
             }
             if (state is MovieLoaded) {
-              //movie_information widget to display info
-              return MovieInformation(movieModel: state.movieModel);
+              //watch_later widget to display info
+              return WatchLaterList(movieModel: state.movieModel);
             }
 
             return Text(
