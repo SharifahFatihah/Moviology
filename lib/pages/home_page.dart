@@ -33,15 +33,13 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Text(
+        title: Text(
           'MVG',
           style: TextStyle(
               fontFamily: 'RubikMarkerHatch',
               fontSize: 40,
               color: Colors.purpleAccent),
         ),
-        leadingWidth: 100,
-        title: Text('Moviology'),
         actions: <Widget>[
           Padding(
               padding: const EdgeInsets.only(right: 20.0),
@@ -57,29 +55,37 @@ class _HomePageState extends State<HomePage> {
         elevation: 15,
         shadowColor: Colors.purpleAccent.shade400,
       ),
-      body: Center(
+      body: SingleChildScrollView(
           child: Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
+        // mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          Image.asset(
-            'images/mvg.png',
-            // height: 100,
+          SizedBox(
             width: 400,
-            fit: BoxFit.contain,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              'Moviology',
-              style: TextStyle(
-                  fontFamily: 'SecularOne',
-                  fontSize: 40,
-                  color: Colors.purpleAccent),
+            height: 200,
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(
+                      'images/posterr.png',
+                    ),
+                    fit: BoxFit.fitWidth),
+              ),
+              child: Center(
+                child: Text(
+                  'Moviology',
+                  style: TextStyle(
+                      fontFamily: 'SecularOne',
+                      fontSize: 40,
+                      color: Colors.purpleAccent),
+                ),
+              ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(25),
+
+          SizedBox(
+            width: 350,
             child: TextField(
               controller: _controller,
               decoration: InputDecoration(
@@ -112,18 +118,29 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
+          SizedBox(height: 50),
           const Text(
-            'Genre',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            'Online Movie Database',
+            style: TextStyle(fontSize: 20),
           ),
+          SizedBox(height: 20),
           SizedBox(
-            height: 15,
-          ),
-          Category(),
-          SizedBox(
+            width: 350,
             height: 400,
-            child: MovieDisplay(),
+            child: Text(
+              'MVG is the short form for Moviology, an app devoted to movies, films, series and TV shows that contains general information about their ratings and more.',
+              style: TextStyle(fontSize: 16, color: Colors.blueGrey),
+            ),
           ),
+
+          // SizedBox(
+          //   height: 15,
+          // ),
+          // Category(),
+          // SizedBox(
+          //   height: 400,
+          //   child: MovieDisplay(),
+          // ),
         ],
       )),
     );
