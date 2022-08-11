@@ -51,7 +51,7 @@ class Search {
 
   factory Search.fromJson(String str) => Search.fromMap(json.decode(str));
 
-  // String toJson() => json.encode(toMap());
+  String toJson() => json.encode(toMap());
 
   factory Search.fromMap(Map<String, dynamic> json) => Search(
         title: json["Title"],
