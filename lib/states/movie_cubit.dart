@@ -25,4 +25,23 @@ class MovieCubit extends Cubit<MovieState> {
       emit(MovieError(errorMessage: e.toString()));
     }
   }
+
+  Future<void> fetchMovieList(String movieName) async {
+    MovieService movieService = MovieService();
+    emit(MovieLoading());
+
+    try {
+      MovieModel movieModel =
+          (await movieService.fetchAllMovies(movieName)) as MovieModel;
+
+      // print('printing length');
+      // print(movieModel.ratings.length);
+
+      emit(
+        MovieLoaded(movieModel: movieModel),
+      );
+    } catch (e) {
+      emit(MovieError(errorMessage: e.toString()));
+    }
+  }
 }

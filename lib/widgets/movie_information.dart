@@ -16,7 +16,7 @@ class MovieInformation extends StatelessWidget {
     const spacer = SizedBox(height: 20);
     const rowSpacer = SizedBox(width: 10);
 
-    print(movieModel.ratings.length);
+    // print(movieModel.ratings.length);
 
     return SingleChildScrollView(
       child: Container(
