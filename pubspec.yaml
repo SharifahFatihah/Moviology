@@ -29,6 +29,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - images/posterr.png
+    - images/movie.png
 
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
