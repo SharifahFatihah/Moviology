@@ -129,7 +129,7 @@ class _HomePageState extends State<HomePage> {
             height: 400,
             child: Text(
               'MVG is the short form for Moviology, an app devoted to movies, films, series and TV shows that contains general information about their ratings and more.',
-              style: TextStyle(fontSize: 16, color: Colors.blueGrey),
+              style: TextStyle(fontSize: 16, color: Colors.white70),
             ),
           ),
 
