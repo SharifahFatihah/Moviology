@@ -42,7 +42,7 @@ class WatchLaterList extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        width: 200,
+                        width: 170,
                         height: 150,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
