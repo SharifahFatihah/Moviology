@@ -1,16 +1,20 @@
-# movie_app
+# Moviology
 
-A new Flutter project.
+A movie app devoted to movies, films, series and TV shows that contains general information about their ratings and more.
 
-## Getting Started
+- Flutter & Dart
+- External api: https://www.omdbapi.com/?t={Movie_title}&apikey={api_key}
+- The screenshots of the app can be found in the Screenshot folder
 
-This project is a starting point for a Flutter application.
+## Installation Guide
 
-A few resources to get you started if this is your first Flutter project:
+1. Clone and install dependencies
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+  # git clone https://github.com/SharifahFatihah/Moviology.git
+  # cd Moviology
+  # npm install
+  # flutter pub get
+  
+2. Run application
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  # flutter run
