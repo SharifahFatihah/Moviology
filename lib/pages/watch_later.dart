@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/models/movie_model.dart';
 import 'package:movie_app/states/bookmarks.dart';
-import 'package:movie_app/states/movie_cubit.dart';
-import 'package:movie_app/states/movie_state.dart';
 import 'package:movie_app/widgets/watch_later_list.dart';
 import 'package:movie_app/pages/home_page.dart';
 
@@ -52,7 +50,7 @@ class WatchLater extends StatelessWidget {
               child: GestureDetector(
                 onTap: () {},
                 child: const Icon(
-                  Icons.video_library,
+                  Icons.bookmark,
                   size: 26.0,
                 ),
               )),
@@ -64,11 +62,16 @@ class WatchLater extends StatelessWidget {
       body: Center(
         child: BlocBuilder<BookmarkCubit, Set<MovieModel>>(
           builder: ((context, state) {
-            return ListView.builder(
-              itemCount: state.length,
-              itemBuilder: (context, index) {
-                return WatchLaterList(movieModel: state.elementAt(index));
-              },
+            return Align(
+              alignment: Alignment.topCenter,
+              child: ListView.builder(
+                itemCount: state.length,
+                reverse: true,
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  return WatchLaterList(movieModel: state.elementAt(index));
+                },
+              ),
             );
           }),
         ),

@@ -2,9 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:movie_app/pages/animation.dart';
-import 'package:movie_app/pages/movie_detail.dart';
 import 'package:movie_app/pages/movie_display.dart';
-import 'package:movie_app/widgets/category.dart';
 import 'package:movie_app/pages/watch_later.dart';
 
 class HomePage extends StatefulWidget {
@@ -53,7 +51,7 @@ class _HomePageState extends State<HomePage> {
                           builder: (context) => const WatchLater()));
                 },
                 child: const Icon(
-                  Icons.video_library,
+                  Icons.bookmark,
                   size: 26.0,
                 ),
               )),
@@ -90,7 +88,6 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-
           SizedBox(
             width: 350,
             child: TextField(
@@ -136,10 +133,9 @@ class _HomePageState extends State<HomePage> {
             height: 100,
             child: Text(
               'MVG is the short form for Moviology, an app devoted to movies, films, series and TV shows that contains general information about their ratings and more.',
-              style: TextStyle(fontSize: 16, color: Colors.blueGrey),
+              style: TextStyle(fontSize: 16, color: Colors.white70),
             ),
           ),
-
           SizedBox(
             height: 300,
             child: Animate(),

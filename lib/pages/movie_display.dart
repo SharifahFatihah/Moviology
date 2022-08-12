@@ -4,8 +4,6 @@ import 'package:movie_app/pages/home_page.dart';
 import 'package:movie_app/pages/movie_detail.dart';
 import 'package:movie_app/states/movie_cubit.dart';
 import 'package:movie_app/states/movie_state.dart';
-import 'package:movie_app/widgets/movie_information.dart';
-import 'package:movie_app/widgets/movie_list.dart';
 
 class MovieDisplay extends StatelessWidget {
   const MovieDisplay({required this.movieName, Key? key}) : super(key: key);
@@ -71,7 +69,6 @@ class MovieDisplay extends StatelessWidget {
                               builder: (context) => MovieDetail(
                                     movieName: movieSearch.search[index].title,
                                   )));
-                      // print('sini-------------: ${movieName}');
                     },
                     title: Text(movieSearch.search[index].title),
                     leading: CircleAvatar(

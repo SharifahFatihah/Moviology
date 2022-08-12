@@ -9,8 +9,6 @@ class MovieList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // print(movieModel.ratings.length);
-
     return ListView.builder(
       scrollDirection: Axis.vertical,
       shrinkWrap: true,

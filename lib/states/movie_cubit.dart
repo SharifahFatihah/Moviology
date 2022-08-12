@@ -14,10 +14,7 @@ class MovieCubit extends Cubit<MovieState> {
 
     try {
       MovieModel movieModel =
-          (await movieService.fetchMovieInformation(movieName)) as MovieModel;
-
-      // print('printing length');
-      // print(movieModel.ratings.length);
+          (await movieService.fetchMovieInformation(movieName));
 
       print('fetching movie');
       print(movieName);
@@ -36,8 +33,7 @@ class MovieCubit extends Cubit<MovieState> {
     emit(MovieLoading());
 
     try {
-      MovieSearch movieSearch =
-          (await movieService.searchMovie(movieName)) as MovieSearch;
+      MovieSearch movieSearch = (await movieService.searchMovie(movieName));
 
       emit(
         MovieListLoaded(movieSearch: movieSearch),

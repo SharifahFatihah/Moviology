@@ -44,7 +44,7 @@ class _AnimateState extends State<Animate> with TickerProviderStateMixin {
         height: 300,
         child: SlideTransition(
           position: _slideAnimation,
-          child: Image(image: AssetImage('images/movie.png')),
+          child: const Image(image: AssetImage('images/movie.png')),
         ));
   }
 }

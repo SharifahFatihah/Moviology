@@ -16,8 +16,6 @@ class MovieInformation extends StatelessWidget {
     const spacer = SizedBox(height: 20);
     const rowSpacer = SizedBox(width: 10);
 
-    // print(movieModel.ratings.length);
-
     return SingleChildScrollView(
       child: Container(
         child: Padding(
@@ -59,8 +57,6 @@ class MovieInformation extends StatelessWidget {
                   width: 1,
                 ),
               ),
-              // elevation: 20,
-              // shadowColor: Colors.purpleAccent,
               color: Colors.black,
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -95,8 +91,6 @@ class MovieInformation extends StatelessWidget {
                   width: 1,
                 ),
               ),
-              // elevation: 20,
-              // shadowColor: Colors.purpleAccent,
               color: Colors.black,
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -187,8 +181,9 @@ class MovieInformation extends StatelessWidget {
         child: ElevatedButton.icon(
           style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all(Colors.purpleAccent),
-              padding: MaterialStateProperty.all(EdgeInsets.all(10)),
-              textStyle: MaterialStateProperty.all(TextStyle(fontSize: 20)),
+              padding: MaterialStateProperty.all(const EdgeInsets.all(10)),
+              textStyle:
+                  MaterialStateProperty.all(const TextStyle(fontSize: 20)),
               elevation: MaterialStateProperty.all(10),
               shadowColor: MaterialStateProperty.all(Colors.white),
               alignment: Alignment.center,
@@ -222,9 +217,6 @@ class MovieInformation extends StatelessWidget {
       flex: 2,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        // mainAxisAlignment: MainAxisAlignment.start,
-        // textDirection: TextDirection.ltr,
-        // mainAxisSize: MainAxisSize.max,
         children: [
           spacer,
           Text(
