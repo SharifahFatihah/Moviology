@@ -1,8 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/models/movie_model.dart';
 import 'package:movie_app/pages/watch_later.dart';
 import 'package:movie_app/states/bookmarks.dart';
+import 'package:movie_app/widgets/alert.dart' as alert;
 
 //display movie information
 class MovieInformation extends StatelessWidget {
@@ -193,22 +195,51 @@ class MovieInformation extends StatelessWidget {
                 // side: BorderSide(color: Colors.red)
               ))),
           onPressed: () {
+            bookMovies(context);
             BlocProvider.of<BookmarkCubit>(context).addBookmark(movieModel);
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => WatchLater(
-                          movieName: movieModel.title,
-                        )));
           },
+          // onPressed: () {
+          //   BlocProvider.of<BookmarkCubit>(context).addBookmark(movieModel);
+          //   Navigator.push(
+          //       context,
+          //       MaterialPageRoute(
+          //           builder: (context) => WatchLater(
+          //                 movieName: movieModel.title,
+          //               )));
+          // },
           icon: const Icon(Icons.play_arrow, size: 30),
           label: const Text(
             'Watch Later',
             style: TextStyle(fontWeight: FontWeight.bold),
+            //   // alert.toastAlert(
+            //   //   message: "Movie added to Favorites",
+            //   //   themeColor: widget.themeColor,
+            //   // );
           ),
         ),
       ),
     );
+  }
+
+  void bookMovies(BuildContext context) {
+    var alertDialog = CupertinoAlertDialog(
+      // backgroundColor: Colors.blue,
+      title: Text("Movie has been added to Favourite list."),
+      content: Text("Enjoy your movies 😀"),
+      actions: [
+        MaterialButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Text('Okay'),
+            )),
+      ],
+    );
+
+    showDialog(
+        context: context, builder: (BuildContext context) => alertDialog);
   }
 
   Widget _moreDetails(
