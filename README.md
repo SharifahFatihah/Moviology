@@ -10,11 +10,11 @@ A movie app devoted to movies, films, series and TV shows that contains general 
 
 1. Clone and install dependencies
 
-- # git clone https://github.com/SharifahFatihah/Moviology.git
-- # cd Moviology
-- # npm install
-- # flutter pub get
+- git clone https://github.com/SharifahFatihah/Moviology.git
+- cd Moviology
+- npm install
+- flutter pub get
   
 2. Run application
 
-- # flutter run
+- flutter run
