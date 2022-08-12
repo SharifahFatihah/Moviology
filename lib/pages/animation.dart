@@ -20,7 +20,7 @@ class _AnimateState extends State<Animate> with TickerProviderStateMixin {
     super.initState();
 
     _animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 1.5));
+        AnimationController(vsync: this, duration: Duration(seconds: 2));
     _slideAnimation = Tween<Offset>(
       begin: Offset(0.2, 0.0),
       end: Offset(0.4, 0.0),
