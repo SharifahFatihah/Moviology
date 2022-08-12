@@ -27,3 +27,7 @@ A movie app devoted to movies, films, series and TV shows that contains general 
 ![4  movie detail](https://user-images.githubusercontent.com/108507330/184276759-9f238b4c-8eee-4e15-9ca5-6f18b55f3c04.png)
 ![5  add watch later list](https://user-images.githubusercontent.com/108507330/184276764-5f00d39f-a546-44e0-ac58-f238d3cda7c4.png)
 ![6  watch later list](https://user-images.githubusercontent.com/108507330/184276768-5aff7933-6ae1-4f55-aafa-8d96b4cd4e97.png)
+
+##Video Demo
+
+https://user-images.githubusercontent.com/108507330/184319305-70edab8c-7054-48e6-8dc9-0d7ceaf43a2c.mp4
