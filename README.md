@@ -19,7 +19,7 @@ A movie app devoted to movies, films, series and TV shows that contains general 
 
 - flutter run
 
-# Screenshots of UI
+## Screenshots of UI
 
 ![movie list](https://user-images.githubusercontent.com/108507330/184276354-9d6d52d4-5a74-4a12-917e-29f23120fbcb.png)
 ![Screenshot_1660272571](https://user-images.githubusercontent.com/108507330/184276356-5656bb5e-72ee-4f1b-9dbe-cd0ae9cc8c1d.png)
